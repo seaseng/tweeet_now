@@ -20,14 +20,13 @@
 <body>
   <header>
     <nav>
+      <a class='navbar' href="/">Home</a>
       <% if current_user %>
-      <a href="/">Home</a>
-      <a href='/user/<%= @current_user.id %>'>Profile</a>
-      <a href='/post/create/<%= @current_user.id %>'>Create Post</a>
-      <a href='/logout'>Logout</a>
+      <a class='navbar' href='/user/<%= @current_user.id %>'>Profile</a>
+      <a class='navbar' href='/logout'>Logout</a>
       <% else %>
-      <a href="/user/login">Login</a>
-      <a href="/user/create">Create</a> 
+      <a class='navbar' href="/user/login">Login</a>
+      <a class='navbar' href="/user/new">New User</a> 
       <% end %>
     </nav>
   </header>
