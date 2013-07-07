@@ -3,7 +3,7 @@ helpers do
   # Replace with code that works with your application
   def current_user
     if session[:user_id]
-      @current_user ||= User.find_by_id(session[:user_id])
+      current_user ||= User.find_by_id(session[:user_id])
     end
   end
 
@@ -11,4 +11,10 @@ helpers do
   def logged_in?
     !current_user.nil?
   end
+
+  # def user_errors(user)
+  #   user.errors.full_messages
+  # end
+
+
 end

@@ -21,8 +21,9 @@
   <header>
     <nav>
       <a class='navbar' href="/">Home</a>
+      <a class='navbar' href='/test'>Test</a>
       <% if current_user %>
-      <a class='navbar' href='/user/<%= @current_user.id %>'>Profile</a>
+      <a class='navbar' href='/user/<%= current_user.id %>'>Profile</a>
       <a class='navbar' href='/logout'>Logout</a>
       <% else %>
       <a class='navbar' href="/user/login">Login</a>

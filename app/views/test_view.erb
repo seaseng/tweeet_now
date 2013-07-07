@@ -1,0 +1,20 @@
+<h2>Testing Param Submissions</h2>
+<form method="post" action="/test">
+  <p><input type="text" name="user[email]"placeholder="email"></p>
+  <p><input type="password" name="user[password]" placeholder="password"></p>
+
+  <p><input type='radio' name="choice" value='radio1'>radio1</p>
+  <p><input type='radio' name="choice" value='radio2'>radio2</p>
+  <p><input type='radio' name="choice" value='radio3'>radio3</p>
+
+  <p><input type='text' name="user2[password]" value='fuck'>test1</p>
+
+
+
+  <input type="submit" value="Test">
+</form>
+
+<% if @test %>
+<h3>Params</h3>
+<%= @test %>
+<% end %>

@@ -1,12 +1,13 @@
-require 'bcrypt'
 
 class User < ActiveRecord::Base
 
   include BCrypt
-  
+
+  validates_uniqueness_of :email
   validates_presence_of :name, :email, :password, :password_confirmation
   validates_confirmation_of :password, :message => 'passwords do not match'
-  # Remember to create a migration!
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, format: { with: VALID_EMAIL_REGEX }# , :message => "Email is invalid."
   
   # Remember to create a migration!
   def password
@@ -26,4 +27,5 @@ class User < ActiveRecord::Base
       false
     end
   end
+
 end
