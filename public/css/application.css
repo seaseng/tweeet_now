@@ -11,6 +11,7 @@ header{
   /*position: fixed;*/
   width: 100%;
   top: 0;
+  background-color: rgb(94, 144, 233);
 }
 
 header a {
@@ -26,7 +27,8 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #333;
+  color: #333333;
+  background-color: rgb(94, 144, 233);
 }
 
 .container {
@@ -46,7 +48,7 @@ body {
   }
 
   .span3 {
-    width: 220px;
+    width: 150px;
     min-height: 1px;
     /*margin-left: 20px;*/
     display: inline-block;
@@ -72,6 +74,7 @@ body {
     font-size: 14px;
     font-weight: normal;
     line-height: 20px;
+    text-align: left;
   }
 
   input.span3 {
@@ -119,7 +122,7 @@ body {
 
     .btn {
       margin-top: 15px;
-      width: 145px;
+      width: 147px;
       display: inline-block;
       padding: 4px 12px;
       margin-bottom: 0;
@@ -147,6 +150,8 @@ body {
 
     }
 
+    /*red #D63737*/
+
 
     input[type="submit"] {
       /*width: auto;*/
@@ -156,23 +161,7 @@ body {
 
     }
 
-
-
     input, textarea, .uneditable-input {
       margin-left: 0;
     }
-
-
-  /*media="screen"
-  input {
-    font-weight: normal;
-    margin: 0;
-    -webkit-rtl-ordering: logical;
-    -webkit-user-select: text;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    -webkit-writing-mode: horizontal-tb;
-    }*/
 
