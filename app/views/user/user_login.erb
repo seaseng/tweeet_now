@@ -3,9 +3,21 @@
   <h4>Please try again</h4>
 <% end %>
 
-<h2>Please Log In</h2>
+<!-- <h2>Please Log In</h2>
 <form method="post" action="/user/login">
   <input type="email" name="user[email]"placeholder="email" required>
   <input type="password" name="user[password]" placeholder="password" required>
   <input type="submit" value="Login">
-</form>
+</form> -->
+
+
+<div class="span3">
+  <h2>Login</h2>
+  <form class = 'login' method="post" action="/user/login">
+    <label>Email Address</label>
+    <input type="email" name="user[email]"placeholder="email" required>
+    <label>Password</label>
+    <input type="password" name="user[password]" placeholder="password" required>
+    <input type="submit" value="Login" class="btn">
+  </form>
+</div>

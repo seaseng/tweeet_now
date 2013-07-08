@@ -1,9 +1,178 @@
+html {
+  font-size: 100%;
+}
+
+header{
+  /*padding: 0 50px 0 50px;*/
+  padding-left: 78%;
+  height: 48px;
+  background-color: #2288ff;
+  line-height: 48px;
+  /*position: fixed;*/
+  width: 100%;
+  top: 0;
+}
+
+header a {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #ecf0f1;
+  padding: 0;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
-th {
-  text-align: left;
-}
+  /*
+    If you have a block-level element of a certain width, margin: 0 auto;
+    will how you center it inside its parent container.
+
+    See: http://bluerobot.com/web/css/center1.html
+    
+    Don't change the container width.
+    */
+    margin: 20px auto;  
+    width: 400px;
+    /*padding: 0px 20px 20px 20px;*/
+    /*border: 1px dotted black;*/
+    text-align: center;
+  }
+
+  .span3 {
+    width: 220px;
+    min-height: 1px;
+    /*margin-left: 20px;*/
+    display: inline-block;
+  }
+
+  h2 {
+    margin: 0;
+    font-family: inherit;
+    font-weight: bold;
+    color: inherit;
+    text-rendering: optimizelegibility;
+    line-height: 40px;
+  }
+
+  form {
+    margin: 0 0 20px;
+  }
+
+  label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+  }
+
+  input.span3 {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 206px;
+    float: none;
+    /*margin-left: 0;*/
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border linear .2s,box-shadow linear .2s;
+    transition: border linear .2s,box-shadow linear .2s;
+    display: inline-block;
+    height: 20px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;
+    vertical-align: middle;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0;
+    -webkit-appearance: textfield;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    cursor: auto;
+    font: -webkit-small-control;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    -webkit-writing-mode: horizontal-tb;
+  }
+
+
+  /*.btn-primary {
+    background-image: linear-gradient(to bottom,#08c,#04c);
+    background-repeat: repeat-x;
+    color: #ddd;
+    }*/
+
+
+
+    .btn {
+      margin-top: 15px;
+      width: 145px;
+      display: inline-block;
+      padding: 4px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      vertical-align: middle;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px 
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+      background-image: linear-gradient(to bottom,#08c,#04c);
+      background-repeat: repeat-x;
+      color: #ddd;
+
+    }
+
+    .btn:hover, .btn:focus {
+      color: #fff;
+      background-color: #04c;
+      text-decoration: none;
+      background-position: 0 -15px;
+      -webkit-transition: background-position .1s linear;
+      transition: background-position .1s linear;
+
+    }
+
+
+    input[type="submit"] {
+      /*width: auto;*/
+      -webkit-appearance: button;
+      box-sizing: border-box;
+      white-space: pre;
+
+    }
+
+
+
+    input, textarea, .uneditable-input {
+      margin-left: 0;
+    }
+
+
+  /*media="screen"
+  input {
+    font-weight: normal;
+    margin: 0;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    -webkit-writing-mode: horizontal-tb;
+    }*/
+

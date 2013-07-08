@@ -1,16 +1,37 @@
  <% if @error_messages %>
-  <h2>User Not Created</h2>
-  <h3>Please Try Again.</h3>
-  <% @error_messages.each do |message| %>
-    <p style='color:red'><%= message %></p>
-  <% end %>
-  
-<% end %>
+ <h2>User Not Created</h2>
+ <h3>Please Try Again.</h3>
+ <% @error_messages.each do |message| %>
+ <p style='color:red'><%= message %></p>
+ <% end %>
 
- <form class = 'login' method="post" action="/user/new">
+ <% end %>
+
+ <!-- <form class = 'login' method="post" action="/user/new">
   <p>Name<input type="text" name="user[name]"placeholder="name" required></p>
   <p>Email<input type="email" name="user[email]"placeholder="email" required></p>
   <p>Password<input type="password" name="user[password]" placeholder="password" required></p>
   <p>Confirm Password<input type="password" name="user[password_confirmation]" placeholder="confirm password" required></p>
   <input type="submit" value="Create User">
-</form>
+</form> -->
+
+
+<div class="span3">
+  <h2>Sign Up</h2>
+  <form class = 'login' method="post" action="/user/new">
+    <label>Name</label>
+    <input input type="text" name="user[name]"placeholder="name" required>
+    <label>Email Address</label>
+    <input type="email" name="user[email]"placeholder="email" required>
+    <!-- <label>Username</label>
+    <input type="text" name="username" placeholder='Username' class="span3"> -->
+    <label>Password</label>
+    <input type="password" name="user[password]" placeholder="password" required>
+    <label>Password Confirmation</label>
+    <input type="password" name="user[password_confirmation]" placeholder="confirm password" required>
+    <!-- <label><input type="checkbox" name="terms"> I agree with the <a href="#">Terms and Conditions</a>.</label> -->
+    <!-- <input type="submit" value="Sign up" class="btn btn-primary pull-right"> -->
+    <input type="submit" value="Sign up" class="btn">
+    <!-- <div class="clearfix"></div> -->
+  </form>
+</div>
