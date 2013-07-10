@@ -5,6 +5,24 @@ get '/' do
   erb :index
 end
 
+
+post '/tweets' do 
+  user = Twitter.user(params[:screen_name])
+  user = TwitterUser.find_or_create_by_screen_name({:screen_name => user.screen_name})
+
+  # debugger
+  # ''
+  if user.tweets.empty? || user.tweets_stale?
+    user.fetch_tweets!
+  end
+
+  tweets = user.tweets.limit(10)
+  # erb :'/twitter/tweets', :locals => { :tweets => tweets }
+  erb :'/twitter/tweets', :locals => { :tweets => tweets, :user => user }
+
+end
+
+
 get '/test' do
   erb :test_view
 end

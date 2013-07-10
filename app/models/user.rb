@@ -1,7 +1,7 @@
-
 class User < ActiveRecord::Base
-
   include BCrypt
+
+  has_many :tweets
 
   validates_uniqueness_of :email
   validates_presence_of :name, :email, :password, :password_confirmation

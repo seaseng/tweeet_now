@@ -48,7 +48,7 @@ body {
     Don't change the container width.
     */
     margin: 20px auto;  
-    width: 350px;
+    width: 400px;
     /*padding: 0px 20px 20px 20px;*/
     /*border: 1px dotted black;*/
     text-align: center;
@@ -153,5 +153,19 @@ body {
 
   input, textarea, .uneditable-input {
     margin-left: 0;
+
+  }
+
+  div.tweet {
+    padding: 1em;
+  }
+
+  div.tweet ul {
+    -webkit-padding-start: 0px;
+  }
+
+  div.tweet ul li {
+    list-style: none;
+    margin: 0 auto;
   }
 
