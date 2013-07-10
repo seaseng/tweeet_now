@@ -15,8 +15,9 @@ class TwitterUser < ActiveRecord::Base
 
   def tweets_stale?
     
-    tweet_time = Time.parse(self.tweets.first.tweeted_at)
-    if ((Time.now - tweet_time)/60) > 720 #12 hours since oldest tweet in db
+    # tweet_time = Time.parse(self.tweets.last.tweeted_at)
+    tweet_time = self.tweets.last.created_at # Time.parse not need for db timestamps
+    if ((Time.now - tweet_time)/60) > 60 #1 hours since oldest tweet in db
       return true
     else
       return false

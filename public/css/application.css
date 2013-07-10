@@ -10,6 +10,16 @@ html {
   font-size: 100%;
 }
 
+.navbar {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #ecf0f1;
+  padding: 0;
+  margin: 0 5px;
+  text-decoration: none;
+
+}
+
 header{
   /*padding: 0 50px 0 50px;*/
   padding-left: 78%;
@@ -21,14 +31,6 @@ header{
   background-color: rgba(94, 144, 233, 0.9);
 }
 
-header a {
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #ecf0f1;
-  padding: 0;
-  margin: 0 5px;
-  text-decoration: none;
-}
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;

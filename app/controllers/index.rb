@@ -7,8 +7,14 @@ end
 
 
 post '/tweets' do 
-  user = Twitter.user(params[:screen_name])
-  user = TwitterUser.find_or_create_by_screen_name({:screen_name => user.screen_name})
+
+begin 
+    user = Twitter.user(params[:screen_name])
+
+rescue
+    erb :errors
+else
+    user = TwitterUser.find_or_create_by_screen_name({:screen_name => user.screen_name})
 
   # debugger
   # ''
@@ -19,7 +25,7 @@ post '/tweets' do
   tweets = user.tweets.limit(10)
   # erb :'/twitter/tweets', :locals => { :tweets => tweets }
   erb :'/twitter/tweets', :locals => { :tweets => tweets, :user => user }
-
+end
 end
 
 
