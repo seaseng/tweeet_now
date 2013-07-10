@@ -1,10 +1,1 @@
-<h2>Last <%= tweets.length %> Tweets for <%= user.screen_name %></h2>
-<div class="tweet">
-  <ul>
-    
-    <% tweets.each do |tweet| %>
-    <li><p><%= tweet.text %></p></li>
-    <% end %>
-
-  </ul>
-</div>
+<%= erb :'/twitter/_tweets', :layout => false, :locals => { :tweets => tweets, :user => user } %>

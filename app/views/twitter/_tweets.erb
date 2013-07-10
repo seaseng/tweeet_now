@@ -1,0 +1,8 @@
+<div class="tweet">
+  <h2>Last <%= tweets.length %> Tweets for <%= user.screen_name %></h2>
+  <ul>
+    <% tweets.each do |tweet| %>
+    <li><p><%= tweet.text %></p></li>
+    <% end %>
+  </ul>
+</div>
