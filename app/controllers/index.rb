@@ -42,6 +42,16 @@ post '/tweets' do
 
 end
 
+post '/tweet/send' do
+
+  if request.xhr?
+    Twitter.update(params[:tweet])
+    erb :'/twitter/_tweet_sent_response', :layout => false
+  end
+
+end
+
+
 
 
 # get '/test' do
@@ -55,6 +65,7 @@ end
 
 
 get '/user/new' do
+
   erb :'/user/user_new'
 
 end

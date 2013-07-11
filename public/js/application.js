@@ -20,26 +20,31 @@ $(document).ready(function() {
                           data:   data});
     console.log('got here 2');
     request.done(updateTweet);
-  }
+  };
 
-
-  var sendTweets = function() {
+  var sendTweet = function() {
     var data = $form.serialize();
     $form.append($spinner);
+
+    console.log(data);
     var request = $.ajax({method: "post",
-                          url:    "/tweets",
+                          url:    "/tweet/send",
                           data:   data});
-    console.log('got here 2');
-    request.done(updateTweet);
-  }
+    request.done(function (response) {
+      $spinner.remove();
+      $tweet_container.find('.tweet').remove();
+      $tweet_container.append(response);
+    });
+  };
 
   var debouncedLoadTweets = _.debounce(loadTweets, 300);
-
+  var debouncedSendTweet  = _.debounce(sendTweet, 300);
   
   var handleFormSubmit = function(e) {
     e.preventDefault();
     console.log('registered the click');
-    debouncedLoadTweets();
+    // debouncedLoadTweets();
+    debouncedSendTweet();
   };
 
   
@@ -49,19 +54,17 @@ $(document).ready(function() {
 
   $('#get_tweets').on('keyup', function(e) {
     e.preventDefault();
-    var tweet = $('textarea[name=text]', this).val();
+    var tweet = $('textarea[name=tweet]', this).val();
     var tweet_count = tweet.length;
-    var tweet_count_string = 'Character Count: ' + tweet_count;
+    var tweet_count_string = 'Characters Left: ' + (140 - tweet_count);
     var count_label = $(this).find('#char_count');
     count_label.text(tweet_count_string);
 
-    // console.log(tweet_count);
+    console.log(tweet_count);
     if (tweet_count > 140) {
       count_label.css('color', 'red');
       var legit_portion = tweet.substring(0, 140);
       var excess = tweet.substring(141);
-
-      // var highlight_tweet = legit_portion + '<span display="none" class="highlight">' + excess + '</span>';
       // disable the submit button
       $('form input[type=submit]').attr('disabled', 'disabled');
       document.getElementById('tweet_area').setSelectionRange(140, 140 + tweet.length);
