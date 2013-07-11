@@ -1,7 +1,5 @@
 class TwitterUser < ActiveRecord::Base
-
   has_many :tweets
-
   def fetch_tweets!
 
     Twitter.user_timeline(self.screen_name).each do |tweet|
@@ -12,9 +10,7 @@ class TwitterUser < ActiveRecord::Base
     self.tweets
   end
 
-
   def tweets_stale?
-    
     # tweet_time = Time.parse(self.tweets.last.tweeted_at)
     tweet_time = self.tweets.last.created_at # Time.parse not need for db timestamps
     if ((Time.now - tweet_time)/60) > 60 #1 hours since oldest tweet in db
@@ -22,6 +18,5 @@ class TwitterUser < ActiveRecord::Base
     else
       return false
     end
-
   end
 end

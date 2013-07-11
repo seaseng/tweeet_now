@@ -13,7 +13,12 @@ post '/tweets' do
   begin 
     user = Twitter.user(params[:screen_name])
   rescue
-    erb :errors
+    if request.xhr?
+      erb :'/twitter/_errors', :layout => false
+    else
+      erb :errors
+    end
+
   else
     user = TwitterUser.find_or_create_by_screen_name({:screen_name => user.screen_name})
 
@@ -24,7 +29,8 @@ post '/tweets' do
     end
     # sleep 3
 
-    tweets = user.tweets.limit(10)
+    # tweets = user.tweets.limit(10)
+    tweets = user.tweets.order("tweeted_at DESC").first(10)
 
     if request.xhr?
       erb :'/twitter/_tweets', :layout => false, :locals => { :tweets => tweets, :user => user }

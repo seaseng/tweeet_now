@@ -60,12 +60,12 @@ body {
 
   }
 
-  .span3 {
-    width: 150px;
-    min-height: 1px;
-    /*margin-left: 20px;*/
-    display: inline-block;
+  img {
+    display: block;
+    margin: 0 auto;
   }
+
+  
 
   h2 {
     margin: 0;
@@ -90,6 +90,17 @@ body {
     text-align: left;
   }
 
+  #main_label {
+    text-align: center;
+  }
+  
+  .span3 {
+    width: 250px;
+    min-height: 1px;
+    /*margin-left: 20px;*/
+    display: inline-block;
+  }
+
   .span3 input {
 
     border: 1px solid #ccc;
@@ -112,7 +123,7 @@ body {
 
   }
   .btn {
-    margin-top: 15px;
+    margin-top: 10px;
     width: 150px;
     display: inline-block;
     padding: 4px 12px;
@@ -121,12 +132,8 @@ body {
     line-height: 20px;
     text-align: center;
     vertical-align: middle;
-
-
     background-image: linear-gradient(to bottom,#08c,#04c);
     /*background-image: linear-gradient(to bottom,rgb(189, 197, 218),#04c);*/
-
-
     background-repeat: repeat-x;
     color: #ddd;
 
@@ -142,32 +149,33 @@ body {
 
   }
 
-
-
-
-  input[type="submit"] {
-    /*width: auto;*/
+/*  input[type="submit"] {
     box-sizing: border-box;
     white-space: pre;
     webkit-appearance: button;
 
   }
-
-  input, textarea, .uneditable-input {
+  */
+  /*input, textarea, .uneditable-input {
     margin-left: 0;
+    }*/
+    /*.tweet_container {
+      width: 300px;
+      text-align: center;
+      margin: 0 auto;
+    }*/
 
-  }
+    div.tweet {
+      padding: 1em;
+    }
 
-  div.tweet {
-    padding: 1em;
-  }
 
-  div.tweet ul {
-    -webkit-padding-start: 0px;
-  }
+    div.tweet ul {
+      -webkit-padding-start: 0px;
+    }
 
-  div.tweet ul li {
-    list-style: none;
-    margin: 0 auto;
-  }
+    div.tweet ul li {
+      list-style: none;
+      /*margin: 0 auto;*/
+    }
 

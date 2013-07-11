@@ -1,28 +1,36 @@
 $(document).ready(function() {
-  $('#get_tweets').on('submit', function(e) {
-    e.preventDefault();
-    // var screen_name = $(this).find('input[name="screen_name"]').val();
+  var $spinner = $('<img id="spinner" src="ajax-loader_blue_512.gif" height="32" width="32">');
+  var $form = $('form');
+  var $tweet_container = $('.tweet_container');
 
-    var loader_image = '<img id="spinner" src="ajax-loader_blue_512.gif" height="32" width="32">';  
-
-    var $form = $(this);
-    var data = $form.serialize();
-    console.log(data);
-
-    $(this).append(loader_image);
+  var updateTweet = function(response) {
     // debugger
+    console.log('got here 3');
+    $spinner.remove();
+    $tweet_container.find('.tweet').remove();
+    // $('.tweet').remove();
+    $tweet_container.append(response);
+  };
+
+  var loadTweets = function() {
+    var data = $form.serialize();
+    $form.append($spinner);
     var request = $.ajax({method: "post",
                           url:    "/tweets",
                           data:   data});
+    console.log('got here 2');
+    request.done(updateTweet);
+  }
 
-    request.done(function(response) {
-      $('#spinner').remove();
-      $('.tweet').remove();
-      // $('')
-      $form.append(response);
-      // console.log(response);
-      // debugger
-    });
+  var debouncedLoadTweets = _.debounce(loadTweets, 300);
 
-  });
+  
+  var handleFormSubmit = function(e) {
+    e.preventDefault();
+    debouncedLoadTweets();
+  };
+
+  
+
+  $('#get_tweets').on('submit', handleFormSubmit);
 });
