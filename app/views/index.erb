@@ -1,9 +1,10 @@
-<h2>Get Some Tweets</h2>
+<h2>Send a Tweet</h2>
 <div class="span3">
-  <form id='get_tweets' class = 'login' method="post" action="/tweets">
-    <label id='main_label'>Twitter Username</label>
-    <input type="text" name="screen_name"placeholder="screen name" required>
-    <input type="submit" value="Get Tweets" class="btn">
+  <form id='get_tweets' class = 'login' method="post" action="/send_tweet">
+    <label id='main_label'>Tweet Away</label>
+    <textarea id='tweet_area' type="text" rows='5' cols='40' name="text" placeholder="Max. 140 characters" required></textarea>
+    <label id='char_count'>Character Count: </label>
+    <input type="submit" value="Post Tweet" class="btn">
   </form>
   <div class="tweet_container"></div>
 </div>

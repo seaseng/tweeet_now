@@ -65,8 +65,6 @@ body {
     margin: 0 auto;
   }
 
-  
-
   h2 {
     margin: 0;
     font-family: inherit;
@@ -91,6 +89,10 @@ body {
   }
 
   #main_label {
+    text-align: center;
+  }
+
+  .field_label {
     text-align: center;
   }
   
@@ -149,22 +151,6 @@ body {
 
   }
 
-/*  input[type="submit"] {
-    box-sizing: border-box;
-    white-space: pre;
-    webkit-appearance: button;
-
-  }
-  */
-  /*input, textarea, .uneditable-input {
-    margin-left: 0;
-    }*/
-    /*.tweet_container {
-      width: 300px;
-      text-align: center;
-      margin: 0 auto;
-    }*/
-
     div.tweet {
       padding: 1em;
     }
@@ -177,5 +163,14 @@ body {
     div.tweet ul li {
       list-style: none;
       /*margin: 0 auto;*/
+    }
+
+    .highlight {
+      background-color: #FFFF88;
+    }
+
+    input[disabled='disabled'] {
+      color: #888;
+
     }
 

@@ -25,6 +25,8 @@ gem 'bcrypt-ruby'
 
 gem 'twitter'
 
+gem 'rerun'
+
 group :test do
   gem 'faker'
   gem 'rspec'

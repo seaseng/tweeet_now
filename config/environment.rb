@@ -30,6 +30,8 @@ require 'twitter'
 
 require 'date'
 
+require 'rerun'
+
 require_relative 'keys'
 
 
